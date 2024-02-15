@@ -10,7 +10,25 @@ arrowMirrorArray([1,2,3]); // => [ 1, 2, 3, 3, 2, 1 ]
 arrowMirrorArray(['a', 'b', 'c', 'd']); // => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a' ]
 ***********************************************************************/
 
-// Your code here 
+const arrowMirrorArray = (arr) => {
+  let index = 0;
+  let newArray = [];
+  let isBackwards = false;
+  while(index > -1){
+    if(index == arr.length){
+      isBackwards = true;
+      index--;
+    }
+    if(isBackwards){
+      newArray.push(arr[index]);
+      index--;
+    }else{
+      newArray.push(arr[index]);
+      index++;
+    }
+  }
+  return newArray;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
