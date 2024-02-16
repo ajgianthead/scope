@@ -23,6 +23,26 @@ console.log(smoothie2("pineapple"));
 ***********************************************************************/
 
 // Your code here 
+const smoothieMachine = () => {
+  let str = "I'm having a smoothie with ";
+  return function (...params){
+    if(params.length == 1){
+      str += params.join(" and ")
+      return str;
+    }
+    str += " and " + params.join(" and ")
+    return str;  
+  }
+}
+
+let smoothie1 = smoothieMachine();
+
+console.log(smoothie1("milk"));
+// prints "I'm having a smoothie with milk"
+console.log(smoothie1("kale", "spinach"));
+// prints "I'm having a smoothie with milk and kale and spinach"
+console.log(smoothie1("honey", "pears", "berries"));
+// prints "I'm having a smoothie with milk and kale and spinach and honey and pears and berries"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
