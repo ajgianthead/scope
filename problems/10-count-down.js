@@ -28,7 +28,15 @@ Example 4:
 
 ***********************************************************************/
 
-// Your code here 
+// Your code here
+const countDownTimer = (num) => {
+  if(num == 0) return "Happy New Year!"
+  function benard () {
+    num--;
+    return num == 0 ? "Happy New Year!" : benard
+  }
+  return benard
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
