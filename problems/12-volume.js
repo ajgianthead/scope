@@ -13,7 +13,28 @@ function returned by recVolume should continue to return the original volume.
 
 ***********************************************************************/
 
-// Your code here 
+const recVolume = (height) =>{
+  let count = 0;
+  let volume = height;
+  return function probVol(num){
+    // count++;
+    // if(count < 2){
+    //   volume *= num;
+    //   return probVol;
+    // }
+    // if(count > 1){
+    //   return volume;
+    // }
+    if(count < 2) volume *= num;
+    count ++;
+    if(count == 1)return probVol;
+    if(count >= 2) return volume;
+  }
+}
+
+let table = recVolume(5);
+console.log(table(4));
+console.log(table(3));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
