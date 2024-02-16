@@ -17,14 +17,6 @@ const recVolume = (height) =>{
   let count = 0;
   let volume = height;
   return function probVol(num){
-    // count++;
-    // if(count < 2){
-    //   volume *= num;
-    //   return probVol;
-    // }
-    // if(count > 1){
-    //   return volume;
-    // }
     if(count < 2) volume *= num;
     count ++;
     if(count == 1)return probVol;
