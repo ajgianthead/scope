@@ -10,24 +10,13 @@ arrowMirrorArray([1,2,3]); // => [ 1, 2, 3, 3, 2, 1 ]
 arrowMirrorArray(['a', 'b', 'c', 'd']); // => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a' ]
 ***********************************************************************/
 
+const arrowReverseString = require("./17-arrow-reverse");
+
 const arrowMirrorArray = (arr) => {
-  let index = 0;
-  let newArray = [];
-  let isBackwards = false;
-  while(index > -1){
-    if(index == arr.length){
-      isBackwards = true;
-      index--;
-    }
-    if(isBackwards){
-      newArray.push(arr[index]);
-      index--;
-    }else{
-      newArray.push(arr[index]);
-      index++;
-    }
-  }
-  return newArray;
+  let copy = arr.map(el => el);
+  let reversed = arr.map(el => el);
+  reversed = reversed.reverse();
+  return copy.concat(reversed);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
