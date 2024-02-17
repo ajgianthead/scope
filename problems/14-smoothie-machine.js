@@ -27,11 +27,20 @@ const smoothieMachine = (...params) => {
   return function (...params2){
     let copy = str.split(' ');
     let toppings = params2;
-    if(toppings.length > 1) toppings = params.concat(params2);
+    if(params.length > 0) toppings = params.concat(params2);
     if(copy[copy.length-1] == 'with' && toppings[0] != undefined) return str += " " + toppings.join(' and ');
     else if(toppings[0] != undefined) return str += " and " + toppings.join(' and ');
   }
 }
+
+// function smoothieMachine(...ingredients) {
+//   let allIng = ingredients;
+
+//   return function (...additionalIng) {
+//     allIng = [...allIng, ...additionalIng];
+//     return "I'm having a smoothie with " + allIng.join(' and ');
+//   }
+// }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
