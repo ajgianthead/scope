@@ -22,7 +22,16 @@ console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
 
-// Your code here 
+const smoothieMachine = (...params) => {
+  let str = "I'm having a smoothie with";
+  return function (...params2){
+    let copy = str.split(' ');
+    let toppings = params2;
+    if(toppings.length > 1) toppings = params.concat(params2);
+    if(copy[copy.length-1] == 'with' && toppings[0] != undefined) return str += " " + toppings.join(' and ');
+    else if(toppings[0] != undefined) return str += " and " + toppings.join(' and ');
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
