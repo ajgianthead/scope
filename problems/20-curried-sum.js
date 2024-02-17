@@ -42,8 +42,16 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - Come up with at least two situations (one per person) on when currying would
   be useful
 ***********************************************************************/
-
-// Your code here 
+const curriedSum = (numArgs) =>{
+  if (numArgs <= 0) return null;
+  let numbers = [];
+  return function _curriedSum(num){
+    let sum;
+    numbers.push(num);
+    if(numArgs === numbers.length) return sum = numbers.reduce((acc, el) => acc + el)
+    else return _curriedSum;
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

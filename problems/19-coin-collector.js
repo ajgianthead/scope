@@ -25,7 +25,13 @@ Example 3:
 
 ***********************************************************************/
 
-// Your code here 
+const coinCollector = (numCoins) => {
+  let collected  = [];
+  return function coinAdder(coin){
+    if(!collected.includes(coin)) collected.push(coin);
+    return collected.length === numCoins ? collected : coinAdder;
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
