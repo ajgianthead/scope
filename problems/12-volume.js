@@ -14,13 +14,11 @@ function returned by recVolume should continue to return the original volume.
 ***********************************************************************/
 
 const recVolume = (height) =>{
-  let count = 0;
-  let volume = height;
+  let volume;
+  let dimensions = [height];
   return function probVol(num){
-    if(count < 2) volume *= num;
-    count ++;
-    if(count == 1)return probVol;
-    if(count >= 2) return volume;
+    if(!(dimensions.length == 3)) dimensions.push(num);
+    return dimensions.length == 3 ? volume = dimensions.reduce((acc, el) => acc*el) : probVol;
   }
 }
 
