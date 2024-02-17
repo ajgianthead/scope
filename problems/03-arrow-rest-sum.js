@@ -12,10 +12,7 @@ arrowRestSum(0); // => 0
 ***********************************************************************/
 
 const arrowRestSum = (...nums) => {
-  let sum = 0;
-  for(let i=0; i<nums.length; i++){
-    sum += nums[i];
-  }
+  let sum = nums.reduce((acc, num) => acc + num , 0)
   return sum;
 }
 
